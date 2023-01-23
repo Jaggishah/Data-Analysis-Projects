@@ -19,8 +19,8 @@ population = data["POP"].unique().tolist()
 gdp = []
 
 for i in country:
-    hdi.append((data.loc[data["COUNTRY"] == i, "HDI"]).sum()/294)
-    tc.append((data2.loc[data2["location"] == i, "total_cases"]).sum())
+    hdi.append((data.loc[data["COUNTRY"] == i, "HDI"]).sum()/294)  # data.loc[data['rows']>7,coums]
+    tc.append((data2.loc[data2["location"] == i, "total_cases"]).sum()) # data.iloc[[2,2,2]]
     td.append((data2.loc[data2["location"] == i, "total_deaths"]).sum())
     sti.append((data.loc[data["COUNTRY"] == i, "STI"]).sum()/294)
     population.append((data2.loc[data2["location"] == i, "population"]).sum()/294)
